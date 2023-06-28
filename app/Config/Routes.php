@@ -33,6 +33,14 @@ $routes->get('/login', 'AuthController::login');
 $routes->add('/login', 'AuthController::login'); 
 $routes->get('/logout', 'AuthController::logout');
 
+//Register Routes
+$routes->get('/register','AuthController::register');
+$routes->post('/register', 'AuthController::register');
+$routes->get('/validate-code', 'AuthController::validateCode');
+$routes->post('/validate-code', 'AuthController::validateCode');
+// $routes->get('/vld', 'ValidationController::sendValidationEmail');
+
+
 //Transaksi Routes
 $routes->get('/keranjang', 'TransaksiController::cart_show', ['filter' => 'auth']);
 $routes->add('/keranjang', 'TransaksiController::cart_add', ['filter' => 'auth']);
@@ -49,6 +57,19 @@ $routes->get('/produk', 'ProdukController::index', ['filter' => 'auth']);
 $routes->add('/produk', 'ProdukController::create', ['filter' => 'auth']);
 $routes->add('/produk/edit/(:any)', 'ProdukController::edit/$1', ['filter' => 'auth']);
 $routes->get('/produk/delete/(:any)', 'ProdukController::delete/$1', ['filter' => 'auth']);
+
+//Account Routes
+$routes->get('/account', 'AccountController::index', ['filter' => 'auth']);
+$routes->add('/account', 'AccountController::create', ['filter' => 'auth']);
+$routes->add('/account/edit/(:any)', 'AccountController::edit/$1', ['filter' => 'auth']);
+$routes->get('/account/delete/(:any)', 'AccountController::delete/$1', ['filter' => 'auth']);
+
+//Acc Setting Routes
+$routes->get('/account-settings', 'ProfileController::accountSettings');
+$routes->post('/update-password', 'ProfileController::updatePassword');
+$routes->post('/update-email', 'ProfileController::updateEmail');
+$routes->get('/transaction-history', 'ProfileController::transactionHistory');
+
 
 /*
  * --------------------------------------------------------------------

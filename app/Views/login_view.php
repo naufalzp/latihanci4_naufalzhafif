@@ -36,17 +36,22 @@ $password = [
                         </div>
 
                         <?php
-                        if (session()->getFlashData('failed')) {
+                        if (session()->getFlashData('failed')) :
                         ?>
                             <div class="col-12 alert alert-danger" role="alert">
-                                <hr>
                                 <p class="mb-0">
                                     <?= session()->getFlashData('failed') ?>
                                 </p>
                             </div>
-                        <?php
-                        }
-                        ?>
+                            <?php endif; ?>
+                            <?php if (session()->getFlashdata('success')) : ?>
+                                <div class="col-12 alert alert-success" role="alert">
+                                    <p class="mb-0">
+                                        <?= session()->getFlashdata('success') ?>
+                                    </p>
+                                </div>
+                            <?php endif; ?>
+                        
                         <?= form_open('login', 'class = "row g-3 needs-validation"') ?>
                         <div class="col-12">
                             <label for="yourUsername" class="form-label">Username</label>
@@ -66,7 +71,9 @@ $password = [
                             <?= form_submit('submit', 'Login', ['class' => 'btn btn-primary w-100']) ?>
                         </div>
                         <?= form_close() ?>
-
+                        <div class="col-12">
+                            <p class="small mb-0">Don't have account? <a href="<?php echo base_url()?>register">Create an account</a></p>
+                        </div>
                     </div>
                 </div>
 

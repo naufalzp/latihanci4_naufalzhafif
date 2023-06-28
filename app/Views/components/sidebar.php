@@ -25,6 +25,12 @@
         <span>Produk</span>
     </a>
     </li>       
+    <li class="nav-item">
+    <a class="nav-link <?php echo (uri_string()=='account')?"":"collapsed"?>" href="<?php echo base_url()?>account">
+        <i class="bi bi-people"></i>
+        <span>Akun</span>
+    </a>
+    </li>       
     <?php
         }
     ?>
