@@ -72,15 +72,9 @@ class Validation extends BaseConfig
         'password' => [
             'rules' => 'required|min_length[5]'
         ],
-        'new_password' => [
-            'rules' => 'required|min_length[5]'
-        ],
     ];
     public $reg_errors = [
         'password' => [
-            'min_length' => 'Password length minimum 8 characters.<br>'
-        ],
-        'new_password' => [
             'min_length' => 'Password length minimum 8 characters.<br>'
         ],
     ];

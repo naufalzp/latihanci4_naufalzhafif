@@ -25,8 +25,8 @@
 					'protocol' => 'smtp',
 					'SMTPHost' => 'smtp.gmail.com',
 					'SMTPPort' => '587',
-					'SMTPUser' => 'naufalarya0@gmail.com',
-					'SMTPPass' => 'lirehiiozdnshakt',
+					'SMTPUser' => 'nzpstorage@gmail.com',
+					'SMTPPass' => 'ndcltfwcwrjjlids',
 					'mailType' => 'html',
 					'charset' => 'utf-8',
 					'newline' => "\r\n"
@@ -116,7 +116,7 @@
 			}
 			public function sendValidationEmail($email,$validationCode)
         	{
-				$this->email->setFrom('naufalarya0@gmail.com', 'Toko Keren');
+				$this->email->setFrom('nzpstorage@gmail.com', 'Toko Keren');
 				$this->email->setTo("$email");
 				$this->email->setSubject('Account Validation');
 				$this->email->setMessage('Please use the following code to validate your account: <b>' . $validationCode.'</b>');
