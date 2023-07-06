@@ -31,7 +31,7 @@
 						'nama' => $this->request->getPost('nama'),
 						'harga' => $this->request->getPost('harga'),
 						'jumlah' => $this->request->getPost('jumlah'),
-						'keterangan' => $this->request->getPost('keterangan')
+						'keterangan' => $this->request->getPost('keterangan'),
 					];
 			
 					$dataFoto = $this->request->getFile('foto');
@@ -55,13 +55,20 @@
 				$data = $this->request->getPost();
 				$validate = $this->validation->run($data, 'barang');
 				$errors = $this->validation->getErrors();
+				$percentage = $this->request->getPost('diskon');
 
+				$discount = $percentage / 100;
+
+				$price = $this->request->getPost('harga'); 
+				$discountedPrice = $price - ($price * $discount);
 				if(!$errors){
 					$dataForm = [
 						'nama' => $this->request->getPost('nama'),
 						'harga' => $this->request->getPost('harga'),
 						'jumlah' => $this->request->getPost('jumlah'),
-						'keterangan' => $this->request->getPost('keterangan')
+						'keterangan' => $this->request->getPost('keterangan'),
+						'diskon' => $this->request->getPost('diskon'),
+						'hargaDiskon' => $discountedPrice
 					];
 
 					if($this->request->getPost('check')){

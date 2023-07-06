@@ -35,6 +35,7 @@
 						];
 					} else {
 						$dataForm = [
+							'email' => $this->request->getPost('email'),
 							'role' => $this->request->getPost('role')
 						];
 					}

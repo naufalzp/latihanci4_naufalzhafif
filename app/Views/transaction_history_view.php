@@ -24,8 +24,14 @@ use App\Models\ProdukModel;
                     <?php foreach ($transactions as $transaction) : ?>
                         <tr>
                             <td><?= $transaction['id'] ?></td>
-                            <td><?= $transaction['total_harga'] ?></td>
-                            <td><?= $transaction['status'] ?></td>
+                            <td><?= number_to_currency($transaction['total_harga'],'IDR') ?></td>
+                            <td><?php if($transaction['status']==0) {
+                                    echo "Diproses";
+                                } else if($transaction['status']==1) {
+                                    echo "Dikirim";
+                                } else {
+                                     echo "Selesai";
+                                 }?></td>
                             <td><?= $transaction['created_date'] ?></td>
                             <td>
                                 <?php

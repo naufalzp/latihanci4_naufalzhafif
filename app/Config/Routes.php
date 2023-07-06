@@ -63,6 +63,11 @@ $routes->get('/account', 'AccountController::index', ['filter' => 'auth']);
 $routes->add('/account', 'AccountController::create', ['filter' => 'auth']);
 $routes->add('/account/edit/(:any)', 'AccountController::edit/$1', ['filter' => 'auth']);
 $routes->get('/account/delete/(:any)', 'AccountController::delete/$1', ['filter' => 'auth']);
+//Transaksi Routes
+$routes->get('/transaksi', 'TransaksidataController::index', ['filter' => 'auth']);
+$routes->add('/transaksi', 'TransaksidataController::create', ['filter' => 'auth']);
+$routes->add('/transaksi/edit/(:any)', 'TransaksidataController::edit/$1', ['filter' => 'auth']);
+$routes->get('/transaksi/delete/(:any)', 'TransaksiController::delete/$1', ['filter' => 'auth']);
 
 //Acc Setting Routes
 $routes->get('/account-settings', 'ProfileController::accountSettings');

@@ -31,6 +31,12 @@
         <span>Akun</span>
     </a>
     </li>       
+    <li class="nav-item">
+    <a class="nav-link <?php echo (uri_string()=='transaksi')?"":"collapsed"?>" href="<?php echo base_url()?>transaksi">
+        <i class="bi bi-people"></i>
+        <span>Transaksi</span>
+    </a>
+    </li>       
     <?php
         }
     ?>

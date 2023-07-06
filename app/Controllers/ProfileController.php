@@ -9,6 +9,7 @@ class ProfileController extends BaseController
 {
     protected $account;
     function __construct(){
+        helper('number');
         helper('form');
         $this->account = new UserModel();
     }

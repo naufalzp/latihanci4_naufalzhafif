@@ -76,6 +76,10 @@ Tambah Data
 					<input type="text" name="jumlah" class="form-control" id="jumlah" value="<?= $produk['jumlah'] ?>" placeholder="Jumlah Barang" required>
 				</div>
 				<div class="form-group">
+					<label for="diskon">Diskon (%)</label>
+					<input type="number" max="100" name="diskon" class="form-control" id="diskon" value="<?= $produk['diskon'] ?>" placeholder="Diskon" required>
+				</div>
+				<div class="form-group">
 					<label for="name">Keterangan</label>
 					<input type="text" name="keterangan" class="form-control" id="keterangan" value="<?= $produk['keterangan'] ?>" placeholder="Keterangan Barang" required>
 				</div>

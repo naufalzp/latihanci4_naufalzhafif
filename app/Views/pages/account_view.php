@@ -88,10 +88,15 @@ if(session()->getFlashData('failed')){
 						<label for="username">Username</label>
 						<?= form_input('username',$account['username'],'class="form-control" id="username" disabled')?>
 					</div>
-					<br>
 					<?= form_hidden('roleKey',true)?>
+					<div class="form-group">
 					<label for="role">Role</label>
 					<?= form_dropdown('role', ['admin' => 'Admin', 'user' => 'User'], $account['role'], 'class="form-select" id="role"'); ?>
+					</div>
+					<div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" value="<?= $account['email']?>" required>
+					</div>
 				</div>
 				<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
